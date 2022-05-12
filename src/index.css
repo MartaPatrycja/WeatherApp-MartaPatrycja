@@ -1,0 +1,138 @@
+h2 {
+  border: 3px solid #1ab2a8;
+  padding: 15px 0;
+  text-align: center;
+  color: #006ec4;
+}
+
+h4 {
+  text-align: center;
+  color: white;
+  background-color: #006ec4;
+  padding: 5px 0;
+  margin: 10px auto;
+}
+.container {
+  margin-top: 40px;
+}
+.card-main {
+  text-align: center;
+  background: #1ab2a8;
+  max-width: 100%;
+}
+.card-city {
+  font-size: 40px;
+  color: #fff;
+}
+.card-country {
+  color: #006ec4;
+}
+.temperature {
+  font-size: 60px;
+  color: #ffbc0e;
+}
+.celsius,
+.fahrenheit {
+  font-size: 20px;
+  color: white;
+  text-decoration: none;
+  font-weight: bolder;
+}
+
+.changing-weather {
+  text-align: center;
+  font-size: 30px;
+  color: #fff;
+}
+
+.card-body-city {
+  background-color: #1ab2a8;
+}
+
+.additional-parameters {
+  list-style: none;
+  text-align: left;
+  color: white;
+  max-width: 100%;
+  padding-left: 20px;
+  padding-bottom: 20px;
+  font-size: 14px;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+.hourly-daily {
+  display: block;
+  margin: 0 auto;
+}
+
+.card-body-hourly {
+  background-color: #76d1cb;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  margin-bottom: 10px;
+  margin-top: 3px;
+}
+
+.card-title-hourly {
+  text-align: center;
+  color: white;
+  padding-top: 2px;
+}
+
+.card-body-daily {
+  background-color: #d1f0ee;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  margin-top: 3px;
+}
+
+.card-title-daily {
+  text-align: center;
+  color: #006ec4;
+  padding-top: 2px;
+}
+.img-weather-big {
+  display: block;
+  margin: 0 auto;
+  width: 200px;
+}
+.img-weather {
+  width: 55px;
+  display: block;
+  margin: 0 auto;
+}
+
+.formular {
+  border: none;
+  padding: 10px 30px;
+  margin: none;
+}
+.form-city-text {
+  border: 3px solid #ffff;
+  max-width: 100px;
+}
+
+.form-city-button {
+  display: justify;
+  margin: 0 auto;
+  color: white;
+  background: #006ec4;
+  border: none;
+  transition: all 200ms ease;
+}
+
+.form-city-button:hover {
+  cursor: pointer;
+  color: #006ec4;
+  background: white;
+  border: 3px solid #006ec4;
+  display: block;
+  margin: 0 auto;
+}
+
+.current-city-button:hover {
+  cursor: pointer;
+  color: #006ec4;
+  border: 3px solid #006ec4;
+  transition: all 200ms ease;
+}
