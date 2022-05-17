@@ -28,15 +28,27 @@ h4 {
   color: #006ec4;
 }
 .temperature {
-  font-size: 60px;
+  margin: 0 auto;
+  padding: 0;
+  font-size: 96px;
   color: #ffbc0e;
 }
-.celsius,
-.fahrenheit {
-  font-size: 20px;
+.units {
+  position: relative;
+  top: -48px;
+  font-size: 25px;
   color: white;
-  text-decoration: none;
   font-weight: bolder;
+}
+
+a#fahrenheit {
+    color: #ffffff;
+    text-decoration: none;
+}
+a#fahrenheit:hover {
+  color: #006ec4;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .changing-weather {
