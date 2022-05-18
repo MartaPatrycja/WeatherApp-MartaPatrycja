@@ -56,9 +56,10 @@ a#fahrenheit:hover {
   text-align: center;
   font-size: 30px;
   color: #fff;
+}
+.changing-weather:first-letter {
   text-transform: capitalize;
 }
-
 .card-body-city {
   background-color: #1ab2a8;
 }
