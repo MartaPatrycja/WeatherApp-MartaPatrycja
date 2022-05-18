@@ -84,7 +84,7 @@ let units = "metric";
 let apiKey = "5804e20be54f5001e6423f04ed96492c";
 let apiUrlStart = "https://api.openweathermap.org/data/2.5/weather?";
 let apiUrl = `${apiUrlStart}lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=${units}`;
-axios.get(apiUrl).then(showTemperature);
+axios.get(apiUrl).then(displayTemperature);
   }
   
   function getCurrentLocation(event) {
