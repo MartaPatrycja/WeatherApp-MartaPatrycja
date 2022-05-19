@@ -33,6 +33,7 @@ h4 {
   font-size: 96px;
   color: #ffbc0e;
 }
+
 .units {
   position: relative;
   margin: 0 auto;
@@ -43,17 +44,16 @@ h4 {
   text-align: left;
 }
 
-a#fahrenheit,
-a#celsius {
-    color: #ffffff;
-    text-decoration: none;
+a#fahrenheit.active,
+a#celsius.active {
+  color: #ffffff;
+  text-decoration: none;
 }
+
 a#fahrenheit.active:hover,
 a#celsius.active:hover {
   color: #006ec4;
-  text-decoration: none;
-  cursor: default;
-}
+  }
 
 .changing-weather {
   text-align: center;
