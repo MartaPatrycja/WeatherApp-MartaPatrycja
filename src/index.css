@@ -70,11 +70,8 @@ a#fahrenheit:hover {
   text-align: left;
   color: white;
   max-width: 100%;
-  padding-left: 20px;
-  padding-bottom: 20px;
-  font-size: 14px;
-  margin-top: 20px;
-  margin-bottom: 40px;
+  font-size: 17px;
+  margin-top: 30px;
 }
 .hourly-daily {
   display: block;
@@ -110,7 +107,7 @@ a#fahrenheit:hover {
 .img-weather-big {
   display: block;
   margin: 0 auto;
-  width: 200px;
+  width: 120px;
 }
 .img-weather {
   width: 55px;
