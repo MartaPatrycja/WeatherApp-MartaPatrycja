@@ -43,14 +43,16 @@ h4 {
   text-align: left;
 }
 
-a#fahrenheit {
+a#fahrenheit,
+a#celsius {
     color: #ffffff;
     text-decoration: none;
 }
-a#fahrenheit:hover {
+a#fahrenheit.active:hover,
+a#celsius.active:hover {
   color: #006ec4;
   text-decoration: none;
-  cursor: pointer;
+  cursor: default;
 }
 
 .changing-weather {
