@@ -38,18 +38,26 @@
                     <div class="col-3">
                 <h1 class="temperature" id="temperature">19</h1>
               </div>
-                <div class="col-9">
-                  <span class="units" id="celsius"> °C |</span><span class="units"><a href="#" id="fahrenheit"> °F</a></span>
-                </div>
+              <div class="col-9">
+                <span class="units"><a href="#" id="celsius">°C</a> | <a href="#" id="fahrenheit">°F</a></span>
+              </div>
               </div>
                 </div>
                 <div class="col-6">
                   <img
-                    src="vector-images/Sun_Outline.svg"
+                    src=""
                     class="img-weather-big"
                     alt="sunny"
+                    id="icon"
                   />
                   <h1 class="changing-weather" id="weather-change">cloudiness</h1>
+                  <div class="card-main">
+                    <ul class="additional-parameters">
+                      <li>Wind: <span id="wind"></span> km/h</li>
+                      <li>Humidity: <span id="humidity"></span>%</li>
+                      <li>Pressure: <span id="pressure"></span> hPa</li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
@@ -86,13 +94,7 @@
               </form>
             </div>
 
-              <div class="card-main">
-                <ul class="additional-parameters">
-                  <li>Wind: <span id="wind"></span> km/h</li>
-                  <li>Humidity: <span id="humidity"></span>%</li>
-                  <li>Pressure: <span id="pressure"></span> hPa</li>
-                </ul>
-              </div>
+              
             </div>
           </div>
         </div>
