@@ -7,7 +7,7 @@ h2 {
 
 h4 {
   text-align: center;
-  color: white;
+  color: #ffbc0e;
   background-color: #006ec4;
   padding: 5px 0;
   margin: 10px auto;
@@ -75,7 +75,8 @@ a#celsius.active:hover {
   font-size: 17px;
   margin-top: 30px;
 }
-.hourly-daily {
+
+.weather-forecast {
   display: block;
   margin: 0 auto;
 }
@@ -93,6 +94,11 @@ a#celsius.active:hover {
   color: white;
   padding-top: 2px;
 }
+.temperatures-hourly {
+  text-align: center;
+  color: #006ec4;
+}
+
 
 .card-body-daily {
   background-color: #d1f0ee;
@@ -106,6 +112,16 @@ a#celsius.active:hover {
   color: #006ec4;
   padding-top: 2px;
 }
+
+.temperatures-daily {
+  text-align: center;
+  color: #1ab2a8;
+}
+
+.forecast-temperature-min {
+opacity: 0.6;
+}
+
 .img-weather-big {
   display: block;
   margin: 0 auto;
