@@ -40,59 +40,6 @@ let month = months[now.getMonth()];
 currentDate.innerHTML = `${date} ${month} ${day} ${year}`;
 currentTime.innerHTML = `${hours}:${minutes}`;
 
-function displayForecast() {
-  let forecastElement = document.querySelector("#forecast-hourly");
-
-  let hour = ["15", "16", "17", "18", "19"];
-
-  let forecastHTML = `<div class="row">`;
-  hour.forEach(function (hours) {
-    forecastHTML =
-      forecastHTML + `
-      <div class="col-2">
-      <div class="card-body-hourly">
-        <h6 class="card-title-hourly">${hours}</h6>
-        <h6 class="temperatures-hourly"><span class="forecast-temperature-max">19° </span><span class="forecast-temperature-min"> 10°</span></h6>
-        <img
-          src="vector-images/Sun_Outline.svg"
-          class="img-weather"
-          alt="sunny"
-        />
-       
-      </div>`;
-        });
-      
-        forecastHTML = forecastHTML + `</div>`;
-        forecastElement.innerHTML = forecastHTML;
-        console.log(forecastHTML);
-      }
-
-function displayForecast() {
-  let forecastElement = document.querySelector("#forecast-dail");
-
-  let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
-
-  let forecastHTML = `<div class="row">`;
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML + `
-      <div class="col-2">
-      <div class="card-body-daily">
-        <h6 class="card-title-daily">${day}</h6>
-        <h6 class="temperatures-daily"><span class="forecast-temperature-max">19° </span><span class="forecast-temperature-min"> 10°</span></h6>
-        <img
-          src="vector-images/Cloudy_Outline.svg"
-          class="img-weather"
-          alt="cloudy"
-        />
-  
-    </div>`;
-        });
-      
-        forecastHTML = forecastHTML + `</div>`;
-        forecastElement.innerHTML = forecastHTML;
-        console.log(forecastHTML);
-      }
 
      
 
@@ -117,8 +64,64 @@ function displayTemperature(response) {
   pressureElement.innerHTML = Math.round(response.data.main.grnd_level);
   iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
   iconElement.setAttribute("alt", response.data.weather[0].description)
-}
-
+  function displayHourlyForecast() {
+    let hourlyForecastElement = document.querySelector("#forecast-hourly");
+  
+    let hour = ["15", "16", "17", "18", "19"];
+  
+    let hourlyForecastHTML = `<div class="row">`;
+    hour.forEach(function (hours) {
+      hourlyForecastHTML =
+      hourlyForecastHTML + `
+        <div class="col-2">
+        <div class="card-body-hourly">
+          <h6 class="card-title-hourly">${hours}</h6>
+          <h6 class="temperatures-hourly"><span class="forecast-temperature-max">19° </span><span class="forecast-temperature-min"> 10°</span></h6>
+          <img
+            src="vector-images/Sun_Outline.svg"
+            class="img-weather"
+            alt="sunny"
+          />
+          </div>
+          </div>
+        </div>`;
+          });
+        
+          hourlyForecastHTML = hourlyForecastHTML + `</div>`;
+          hourlyForecastElement.innerHTML = hourlyForecastHTML;
+          console.log(hourlyForecastHTML);
+        }
+  
+  function displayDailyForecast() {
+    let dailyForecastElement = document.querySelector("#forecast-daily");
+  
+    let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
+  
+    let dailyForecastHTML = `<div class="row">`;
+    days.forEach(function (day) {
+      dailyForecastHTML =
+      dailyForecastHTML + `
+        <div class="col-2">
+        <div class="card-body-daily">
+          <h6 class="card-title-daily">${day}</h6>
+          <h6 class="temperatures-daily"><span class="forecast-temperature-max">19° </span><span class="forecast-temperature-min"> 10°</span></h6>
+          <img
+            src="vector-images/Cloudy_Outline.svg"
+            class="img-weather"
+            alt="cloudy"
+          />
+          </div>
+          </div>
+      </div>`;
+          });
+        
+          dailyForecastHTML = dailyForecastHTML + `</div>`;
+          dailyForecastElement.innerHTML = dailyForecastHTML;
+          console.log(dailyForecastHTML);
+        }
+  }
+  
+      
 let apiKey = "5804e20be54f5001e6423f04ed96492c";
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Łódź&appid=${apiKey}&units=metric`;
 
