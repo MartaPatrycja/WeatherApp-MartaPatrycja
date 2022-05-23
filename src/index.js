@@ -52,8 +52,6 @@ function displayTemperature(response) {
   let humidityElement =  document.querySelector("#humidity");
   let pressureElement =  document.querySelector("#pressure");
   let iconElement =  document.querySelector("#icon");
-  let hourlyElement = document.querySelector("#forecast-hourly");
-  let dailyElement = document.querySelector("#forecast-daily");
 
   celsiusTemperature = response.data.main.temp;
 
@@ -66,13 +64,15 @@ function displayTemperature(response) {
   pressureElement.innerHTML = Math.round(response.data.main.grnd_level);
   iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
   iconElement.setAttribute("alt", response.data.weather[0].description);
-  hourlyElement.innerHTML = hourlyForecastHTML;
-  dailyElement.innerHTML = dailyForecastHTML;
+
+  displayDailyForecast();
+  displayHourlyForecast();
 }
   
   function displayHourlyForecast() {
+    let hourlyElement = document.querySelector("#forecast-hourly");
     
-    let hour = ["15", "16", "17", "18", "19"];
+    let hour = ["15:00", "16:00", "17:00", "18:00", "19:00"];
   
     let hourlyForecastHTML = `<div class="row">`;
     hour.forEach(function (hours) {
@@ -80,9 +80,9 @@ function displayTemperature(response) {
       hourlyForecastHTML =
       hourlyForecastHTML +
         `
-        <div class="col-2">
+        <div class="col">
         <div class="card-body-hourly">
-          <h6 class="card-title-hourly">${hours}</h6>
+          <h5 class="card-title-hourly">${hours}</h5>
           <h6 class="temperatures-hourly"><span class="forecast-temperature-max">19° </span><span class="forecast-temperature-min"> 10°</span></h6>
           <img
             src="vector-images/Cloudy_Outline.svg"
@@ -95,9 +95,11 @@ function displayTemperature(response) {
     });
         
           hourlyForecastHTML = hourlyForecastHTML + `</div>`;
+          hourlyElement.innerHTML = hourlyForecastHTML;
         }
   
   function displayDailyForecast() {
+    let dailyElement = document.querySelector("#forecast-daily");
   
     let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
   
@@ -107,9 +109,9 @@ function displayTemperature(response) {
       dailyForecastHTML =
       dailyForecastHTML +
         `
-        <div class="col-2">
+        <div class="col">
         <div class="card-body-daily">
-          <h6 class="card-title-daily">${day}</h6>
+          <h5 class="card-title-daily">${day}</h5>
           <h6 class="temperatures-daily"><span class="forecast-temperature-max">19° </span><span class="forecast-temperature-min"> 10°</span></h6>
           <img
             src="vector-images/Cloudy_Outline.svg"
@@ -122,6 +124,8 @@ function displayTemperature(response) {
     });
         
           dailyForecastHTML = dailyForecastHTML + `</div>`;
+          dailyElement.innerHTML = dailyForecastHTML;
+          
         }
   
   
