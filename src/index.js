@@ -52,6 +52,8 @@ function displayTemperature(response) {
   let humidityElement =  document.querySelector("#humidity");
   let pressureElement =  document.querySelector("#pressure");
   let iconElement =  document.querySelector("#icon");
+  let hourlyElement = document.querySelector("#forecast-hourly");
+  let dailyElement = document.querySelector("#forecast-daily");
 
   celsiusTemperature = response.data.main.temp;
 
@@ -63,10 +65,13 @@ function displayTemperature(response) {
   humidityElement.innerHTML = response.data.main.humidity;
   pressureElement.innerHTML = Math.round(response.data.main.grnd_level);
   iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
-  iconElement.setAttribute("alt", response.data.weather[0].description)
-  function displayHourlyForecast() {
-    let hourlyForecastElement = document.querySelector("#forecast-hourly");
+  iconElement.setAttribute("alt", response.data.weather[0].description);
+  hourlyElement.innerHTML = hourlyForecastHTML;
+  dailyElement.innerHTML = dailyForecastHTML;
+}
   
+  function displayHourlyForecast() {
+    
     let hour = ["15", "16", "17", "18", "19"];
   
     let hourlyForecastHTML = `<div class="row">`;
@@ -88,12 +93,9 @@ function displayTemperature(response) {
           });
         
           hourlyForecastHTML = hourlyForecastHTML + `</div>`;
-          hourlyForecastElement.innerHTML = hourlyForecastHTML;
-          console.log(hourlyForecastHTML);
         }
   
   function displayDailyForecast() {
-    let dailyForecastElement = document.querySelector("#forecast-daily");
   
     let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
   
@@ -116,10 +118,8 @@ function displayTemperature(response) {
           });
         
           dailyForecastHTML = dailyForecastHTML + `</div>`;
-          dailyForecastElement.innerHTML = dailyForecastHTML;
-          console.log(dailyForecastHTML);
         }
-  }
+  
   
       
 let apiKey = "5804e20be54f5001e6423f04ed96492c";
