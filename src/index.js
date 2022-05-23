@@ -76,21 +76,23 @@ function displayTemperature(response) {
   
     let hourlyForecastHTML = `<div class="row">`;
     hour.forEach(function (hours) {
+      console.log("dsf");
       hourlyForecastHTML =
-      hourlyForecastHTML + `
+      hourlyForecastHTML +
+        `
         <div class="col-2">
         <div class="card-body-hourly">
           <h6 class="card-title-hourly">${hours}</h6>
           <h6 class="temperatures-hourly"><span class="forecast-temperature-max">19° </span><span class="forecast-temperature-min"> 10°</span></h6>
           <img
-            src="vector-images/Sun_Outline.svg"
+            src="vector-images/Cloudy_Outline.svg"
             class="img-weather"
-            alt="sunny"
+            alt="cloudy"
           />
-          </div>
-          </div>
-        </div>`;
-          });
+    
+      </div>
+       </div>`;
+    });
         
           hourlyForecastHTML = hourlyForecastHTML + `</div>`;
         }
@@ -101,8 +103,10 @@ function displayTemperature(response) {
   
     let dailyForecastHTML = `<div class="row">`;
     days.forEach(function (day) {
+      console.log("dsf");
       dailyForecastHTML =
-      dailyForecastHTML + `
+      dailyForecastHTML +
+        `
         <div class="col-2">
         <div class="card-body-daily">
           <h6 class="card-title-daily">${day}</h6>
@@ -112,10 +116,10 @@ function displayTemperature(response) {
             class="img-weather"
             alt="cloudy"
           />
-          </div>
-          </div>
-      </div>`;
-          });
+    
+      </div>
+       </div>`;
+    });
         
           dailyForecastHTML = dailyForecastHTML + `</div>`;
         }
