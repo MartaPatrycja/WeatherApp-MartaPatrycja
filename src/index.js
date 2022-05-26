@@ -51,13 +51,14 @@ currentTime.innerHTML = `${hours}:${minutes}`;
   function formatHour(timestamp) {
     let date = new Date(timestamp * 1000);
     let hour = date.getHours();
-    let hours = `${hours}:${minutes}`;
+    let minute = date.getMinutes();
+    let hours = `${hour}:${minute}`;
 
-    if (hours < 10) {
-      hours = `0${hours}`;
+    if (hour < 10) {
+      hour = `0${hour}`;
     }
-    if (minutes < 10) {
-      minutes = `0${minutes}`;
+    if (minute < 10) {
+      minute = `0${minute}`;
     }
   
     return hours[hour];
