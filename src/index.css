@@ -29,31 +29,21 @@ h4 {
 }
 .temperature {
   margin: 0 auto;
-  padding-left: 20px;
+  padding-left: 50px;
   font-size: 96px;
   color: #ffbc0e;
+  text-align: left;
 }
 
 .units {
   position: relative;
   margin: 0 auto;
-  top: 20px;
-  font-size: 25px;
+  top: 15px;
+  font-size: 40px;
   color: white;
   font-weight: bolder;
   text-align: left;
 }
-
-a#fahrenheit.active,
-a#celsius.active {
-  color: #ffffff;
-  text-decoration: none;
-}
-
-a#fahrenheit.active:hover,
-a#celsius.active:hover {
-  color: #006ec4;
-  }
 
 .changing-weather {
   text-align: center;
