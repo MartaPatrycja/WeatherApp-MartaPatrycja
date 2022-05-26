@@ -48,22 +48,23 @@ currentTime.innerHTML = `${hours}:${minutes}`;
     return days[day];
   }
 
-  function formatHour(timestamp) {
-    let now = new Date(timestamp * 1000);
-    let hour = now.getHours();
-    let minute = now.getMinutes();
-    let hours = `${hour}:${minute}`;
+  function formatHour() {
+    let now = new Date();
+    let hours = now.getHours();
+    let minutes = now.getMinutes();
+    let hour = `${hours}:${minutes}`;
 
-    if (hour < 10) {
-      hour = `0${hour}`;
+    if (hours < 10) {
+      hours = `0${hours}`;
     }
-    if (minute < 10) {
-      minute = `0${minute}`;
+    if (minutes < 10) {
+      minutes = `0${minutes}`;
     }
   
-    return hours[hour];
+    return hour[hours, minutes];
 
   }
+  
 
 function getForecast(coordinates) {
   let apiKey = "5804e20be54f5001e6423f04ed96492c";
