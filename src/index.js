@@ -48,8 +48,8 @@ currentTime.innerHTML = `${hours}:${minutes}`;
     return days[day];
   }
 
-  function formatHour() {
-    let now = new Date();
+  function formatHour(timestamp) {
+    let now = new Date(timestamp * 1000);
     let hours = now.getHours();
     let minutes = now.getMinutes();
     let hour = `${hours}:${minutes}`;
