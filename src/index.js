@@ -40,7 +40,35 @@ let month = months[now.getMonth()];
 currentDate.innerHTML = `${date} ${month} ${day} ${year}`;
 currentTime.innerHTML = `${hours}:${minutes}`;
 
+ function formatDay(timestamp) {
+    let date = new Date(timestamp * 1000);
+    let day = date.getDay();
+    let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  
+    return days[day];
+  }
 
+  function formatHour(timestamp) {
+    let date = new Date(timestamp * 1000);
+    let hours = date.getHours();
+    if (hours < 10) {
+      hours = `0${hours}`;
+    }
+    let minutes = now.getMinutes();
+    if (minutes < 10) {
+      minutes = `0${minutes}`;
+    }
+  
+    return hours[hours];
+  }
+
+function getForecast(coordinates) {
+  let apiKey = "5804e20be54f5001e6423f04ed96492c";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayHourlyForecast);
+  axios.get(apiUrl).then(displayDailyForecast);
+  
+}
      
 
 function displayTemperature(response) {
@@ -65,62 +93,68 @@ function displayTemperature(response) {
   iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
   iconElement.setAttribute("alt", response.data.weather[0].description);
 
-  displayDailyForecast();
-  displayHourlyForecast();
+  
+
+  getForecast(response.data.coord);
+
+ 
 }
   
-  function displayHourlyForecast() {
+  function displayHourlyForecast(response) {
+    console.log(response.data.hourly);
+    let forecast = response.data.hourly;
     let hourlyElement = document.querySelector("#forecast-hourly");
     
-    let hour = ["15:00", "16:00", "17:00", "18:00", "19:00"];
   
     let hourlyForecastHTML = `<div class="row">`;
-    hour.forEach(function (hours) {
-      console.log("dsf");
+    forecast.forEach(function (forecastHour, index) {
+      if (index < 6) {
+      
       hourlyForecastHTML =
       hourlyForecastHTML +
         `
         <div class="col">
         <div class="card-body-hourly">
-          <h5 class="card-title-hourly">${hours}</h5>
-          <h6 class="temperatures-hourly"><span class="forecast-temperature-max">19° </span><span class="forecast-temperature-min"> 10°</span></h6>
+          <h5 class="card-title-hourly">${formatHour(forecastHour.dt)}</h5>
+          <h6 class="temperatures-hourly"><span class="forecast-temperature-max">${Math.round(forecastHour.temp.max)}°</span> <span class="forecast-temperature-min">${Math.round(forecastHour.temp.min)}°</span></h6>
           <img
-            src="vector-images/Cloudy_Outline.svg"
+            src="http://openweathermap.org/img/wn/${forecastHour.weather[0].icon}@2x.png"
             class="img-weather"
             alt="cloudy"
           />
     
       </div>
        </div>`;
+      }
     });
         
           hourlyForecastHTML = hourlyForecastHTML + `</div>`;
           hourlyElement.innerHTML = hourlyForecastHTML;
         }
   
-  function displayDailyForecast() {
+  function displayDailyForecast(response) {
+    let forecast = response.data.daily;
     let dailyElement = document.querySelector("#forecast-daily");
   
-    let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
-  
     let dailyForecastHTML = `<div class="row">`;
-    days.forEach(function (day) {
-      console.log("dsf");
+    forecast.forEach(function (forecastDay, index) {
+      if (index < 6) {
       dailyForecastHTML =
       dailyForecastHTML +
         `
         <div class="col">
         <div class="card-body-daily">
-          <h5 class="card-title-daily">${day}</h5>
-          <h6 class="temperatures-daily"><span class="forecast-temperature-max">19° </span><span class="forecast-temperature-min"> 10°</span></h6>
+          <h5 class="card-title-daily">${formatDay(forecastDay.dt)}</h5>
+          <h6 class="temperatures-daily"><span class="forecast-temperature-max">${Math.round(forecastDay.temp.max)}°</span> <span class="forecast-temperature-min">${Math.round(forecastDay.temp.min)}°</span></h6>
           <img
-            src="vector-images/Cloudy_Outline.svg"
+            src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png"
             class="img-weather"
             alt="cloudy"
           />
     
       </div>
        </div>`;
+      }
     });
         
           dailyForecastHTML = dailyForecastHTML + `</div>`;
