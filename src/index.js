@@ -50,7 +50,10 @@ currentTime.innerHTML = `${hours}:${minutes}`;
 
   function formatHour(timestamp) {
     let date = new Date(timestamp * 1000);
-    let hours = date.getHours();
+    let hour = date.getHours();
+    let hours = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17,
+    18, 19, 20, 22, 23, 24];
+
     if (hours < 10) {
       hours = `0${hours}`;
     }
@@ -59,7 +62,8 @@ currentTime.innerHTML = `${hours}:${minutes}`;
       minutes = `0${minutes}`;
     }
   
-    return hours[hours];
+    return hour[hours];
+
   }
 
 function getForecast(coordinates) {
@@ -196,8 +200,7 @@ axios.get(apiUrl).then(displayTemperature);
 event.preventDefault();
 navigator.geolocation.getCurrentPosition(searchCurrentLocation);
   }
-  
-  
+
   let searchForm = document.querySelector("#form-city-button");
   searchForm.addEventListener("submit", submit);
   
