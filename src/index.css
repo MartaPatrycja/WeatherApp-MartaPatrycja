@@ -1,3 +1,4 @@
+
 h2 {
   border: 3px solid #1ab2a8;
   padding: 15px 0;
@@ -39,10 +40,9 @@ h4 {
   position: relative;
   margin: 0 auto;
   top: 15px;
-  font-size: 40px;
+  font-size: 35px;
   color: white;
-  font-weight: bolder;
-  text-align: left;
+  font-weight: 700;
 }
 
 .changing-weather {
@@ -91,7 +91,7 @@ h4 {
 
 
 .card-body-daily {
-  background-color: #d1f0ee;
+  background-color: #c9eeeb;
   padding-bottom: 10px;
   padding-top: 10px;
   margin-top: 3px;
