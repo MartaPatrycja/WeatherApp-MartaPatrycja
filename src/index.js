@@ -149,7 +149,7 @@ function displayTemperature(response) {
         <div class="col">
         <div class="card-body-daily">
           <h5 class="card-title-daily">${formatDay(forecastDay.dt)}</h5>
-          <h5 class="temperatures-daily"><span class="daily-temperature-max">${Math.round(forecastDay.temp.max)}°</span> <span class="daily-temperature-min">${Math.round(forecastDay.temp.min)}°</span></h5>
+          <h5 class="temperatures-daily"><span class="daily-temperature-max">Max: ${Math.round(forecastDay.temp.max)}°</span> <span class="daily-temperature-min">Min: ${Math.round(forecastDay.temp.min)}°</span></h5>
           <img
             src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png"
             class="img-weather"

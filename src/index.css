@@ -115,10 +115,10 @@ opacity: 0.5;
 .img-weather-big {
   display: block;
   margin: 0 auto;
-  width: 120px;
+  width: 140px;
 }
-.img-weather {
-  width: 55px;
+.img-weather-small {
+  width: 70px;
   display: block;
   margin: 0 auto;
 }
