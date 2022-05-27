@@ -61,7 +61,7 @@ currentTime.innerHTML = `${hours}:${minutes}`;
       minutes = `0${minutes}`;
     }
   
-    return hour[hours, minutes];
+    return `${hours}:${minutes}`;
 
   }
   
@@ -120,7 +120,7 @@ function displayTemperature(response) {
         <div class="col">
         <div class="card-body-hourly">
           <h5 class="card-title-hourly">${formatHour(forecastHour.dt)}</h5>
-          <h6 class="temperatures-hourly"><span class="forecast-temperature-max">${Math.round(forecastHour.temp.max)}°</span> <span class="forecast-temperature-min">${Math.round(forecastHour.temp.min)}°</span></h6>
+          <h5 class="temperatures-hourly"><span class="hourly-temperature">${Math.round(forecastHour.temp)}°</span></h5>
           <img
             src="http://openweathermap.org/img/wn/${forecastHour.weather[0].icon}@2x.png"
             class="img-weather"
@@ -149,7 +149,7 @@ function displayTemperature(response) {
         <div class="col">
         <div class="card-body-daily">
           <h5 class="card-title-daily">${formatDay(forecastDay.dt)}</h5>
-          <h6 class="temperatures-daily"><span class="forecast-temperature-max">${Math.round(forecastDay.temp.max)}°</span> <span class="forecast-temperature-min">${Math.round(forecastDay.temp.min)}°</span></h6>
+          <h5 class="temperatures-daily"><span class="daily-temperature-max">${Math.round(forecastDay.temp.max)}°</span> <span class="daily-temperature-min">${Math.round(forecastDay.temp.min)}°</span></h5>
           <img
             src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png"
             class="img-weather"
